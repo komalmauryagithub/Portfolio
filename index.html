@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Metadata -->
+  <title>Komal Maurya | Creative Full-Stack Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Komal Maurya, an aspiring Full-Stack Web Developer. Specializing in HTML, CSS, JavaScript, React, Node.js, Express, PHP, MySQL, MongoDB, and AI API integrations.">
+  <meta name="keywords" content="Komal Maurya, Full Stack Developer, React Developer, Node.js Developer, Web Developer Portfolio, Mumbai University, Software Engineer Portfolio">
+  <meta name="author" content="Komal Maurya">
+  <link rel="canonical" href="http://localhost:5000/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://localhost:5000/">
+  <meta property="og:title" content="Komal Maurya | Creative Full-Stack Developer Portfolio">
+  <meta property="og:description" content="Explore portfolio works, full-stack applications, and tech expertise of Komal Maurya.">
+  <meta property="og:image" content="images/profile.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="http://localhost:5000/">
+  <meta property="twitter:title" content="Komal Maurya | Creative Full-Stack Developer Portfolio">
+  <meta property="twitter:description" content="Explore portfolio works, full-stack applications, and tech expertise of Komal Maurya.">
+  <meta property="twitter:image" content="images/profile.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/profile.jpg">
+
+  <!-- Fonts & Icon Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       INTRO LOADER
+       ========================================================================== -->
+  <div id="intro-loader" class="loader-overlay" role="dialog" aria-modal="true" aria-label="Loading Portfolio">
+    <div class="loader-content">
+      <div class="loader-logo">KM</div>
+      <div class="loader-bar" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SCROLL PROGRESS & STICKY HEADER
+       ========================================================================== -->
+  <div class="scroll-progress-container" aria-hidden="true">
+    <div id="scroll-progress" class="scroll-progress-bar"></div>
+  </div>
+
+  <header id="header">
+    <nav class="nav-container" aria-label="Main Navigation">
+      <a href="#home" class="nav-brand" aria-label="Komal Maurya Home">
+        KM<span>.</span>
+      </a>
+      
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links-container" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links-container">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="resume.pdf" target="_blank" class="nav-resume-btn" aria-label="Open Resume PDF"><i class="fas fa-download"></i> Resume</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section id="home" class="hero-section">
+    <div class="spotlight-container" aria-hidden="true">
+      <div id="hero-spotlight" class="spotlight"></div>
+    </div>
+    
+    <div class="hero-grid">
+      <div class="hero-content reveal">
+        <div class="availability-tag" aria-label="Availability Status">
+          <span class="availability-dot"></span> Available for Web Development Opportunities
+        </div>
+        <h1 class="hero-title">
+          Hi, I'm <span>Komal Maurya</span>
+        </h1>
+        <div class="hero-role" aria-live="polite">
+          I build applications with <span id="hero-role-text"></span>
+        </div>
+        <p class="hero-desc">
+          An aspiring full-stack developer committed to crafting visually premium, highly accessible, and performance-optimized digital platforms.
+        </p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn-primary" aria-label="View Projects Section">View Projects <i class="fas fa-arrow-right"></i></a>
+          <a href="resume.pdf" target="_blank" class="btn-secondary" aria-label="Open Resume PDF">View Resume <i class="fas fa-file-invoice"></i></a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/komalmauryagithub" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/komal-maurya-b797a22b3" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:komalmaurya09072005@gmail.com" aria-label="Send Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="hero-art-container reveal">
+        <div class="hero-mesh-card" aria-hidden="true">
+          <img src="images/profile.jpg" alt="Komal Maurya's Portrait" class="hero-profile-image">
+        </div>
+        <div class="floating-symbols" aria-hidden="true">
+          <span class="symbol symbol-1">&lt;div&gt;</span>
+          <span class="symbol symbol-2">JSON</span>
+          <span class="symbol symbol-3">useState</span>
+          <span class="symbol symbol-4">SELECT *</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ABOUT SECTION
+       ========================================================================== -->
+  <section id="about" class="about-section">
+    <div class="section-header reveal">
+      <span class="section-label">01. Story</span>
+      <h2 class="section-title">About <span>Me</span></h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-editorial-story reveal">
+        <p class="about-intro-lead">
+          I am a passionate full-stack web developer and tech explorer eager to bridge the gap between creative UI design and backend architecture.
+        </p>
+        <p class="about-story-text">
+          Currently focused on expanding my capabilities in AI API integrations, responsive database structures, and high-performance frontend interfaces. I design web products with clean aesthetics and structural precision.
+        </p>
+        
+        <h3 class="modal-section-title" style="margin-top:15px;">Interests & Specializations</h3>
+        <div class="about-interests-grid">
+          <div class="about-interest-card">
+            <span class="interest-icon"><i class="fas fa-laptop-code"></i></span>
+            <span class="interest-title">Frontend Engineering</span>
+            <span class="interest-desc">Designing interfaces using CSS, React, Bootstrap, and Tailwind.</span>
+          </div>
+          <div class="about-interest-card">
+            <span class="interest-icon"><i class="fas fa-database"></i></span>
+            <span class="interest-title">Database Design</span>
+            <span class="interest-desc">Managing clean databases using MySQL, MongoDB, and PDO bindings.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-highlights reveal">
+        <div class="highlight-stat-box">
+          <span class="highlight-num">10+</span>
+          <span class="highlight-label">Tech Competencies</span>
+          <span class="highlight-subtext">Proficient in frontend, backend, database languages, and platforms.</span>
+        </div>
+        <div class="highlight-stat-box">
+          <span class="highlight-num">2+</span>
+          <span class="highlight-label">Key Full-Stack Works</span>
+          <span class="highlight-subtext">Featured full-stack works like SketchNest and KFOOD.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SKILLS SECTION
+       ========================================================================== -->
+  <section id="skills" class="skills-section">
+    <div class="section-header reveal">
+      <span class="section-label">02. Competency</span>
+      <h2 class="section-title">Technical <span>Skills</span></h2>
+    </div>
+
+    <div class="skills-container reveal">
+      <div class="skills-tab-nav" id="skills-tabs" role="tablist" aria-label="Skills categories">
+        <button class="skill-tab-btn active" data-category="all" role="tab" aria-selected="true" aria-controls="skills-grid-container">All</button>
+        <button class="skill-tab-btn" data-category="frontend" role="tab" aria-selected="false" aria-controls="skills-grid-container">Frontend</button>
+        <button class="skill-tab-btn" data-category="backend" role="tab" aria-selected="false" aria-controls="skills-grid-container">Backend</button>
+        <button class="skill-tab-btn" data-category="databases" role="tab" aria-selected="false" aria-controls="skills-grid-container">Databases</button>
+        <button class="skill-tab-btn" data-category="languages" role="tab" aria-selected="false" aria-controls="skills-grid-container">Languages</button>
+        <button class="skill-tab-btn" data-category="tools" role="tab" aria-selected="false" aria-controls="skills-grid-container">Tools</button>
+      </div>
+
+      <div class="skills-grid" id="skills-grid-container" role="tabpanel">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </div>
+
+    <!-- Tech Marquee Banner -->
+    <div class="marquee-container" aria-hidden="true">
+      <div class="marquee-track">
+        <!-- Loop items -->
+        <div class="marquee-item"><i class="fab fa-react"></i> React.js</div>
+        <div class="marquee-item"><i class="fab fa-node-js"></i> Node.js</div>
+        <div class="marquee-item"><i class="fab fa-js"></i> JavaScript</div>
+        <div class="marquee-item"><i class="fab fa-php"></i> PHP</div>
+        <div class="marquee-item"><i class="fas fa-database"></i> MySQL</div>
+        <div class="marquee-item"><i class="fas fa-leaf"></i> MongoDB</div>
+        <div class="marquee-item"><i class="fab fa-github"></i> GitHub</div>
+        
+        <div class="marquee-item"><i class="fab fa-react"></i> React.js</div>
+        <div class="marquee-item"><i class="fab fa-node-js"></i> Node.js</div>
+        <div class="marquee-item"><i class="fab fa-js"></i> JavaScript</div>
+        <div class="marquee-item"><i class="fab fa-php"></i> PHP</div>
+        <div class="marquee-item"><i class="fas fa-database"></i> MySQL</div>
+        <div class="marquee-item"><i class="fas fa-leaf"></i> MongoDB</div>
+        <div class="marquee-item"><i class="fab fa-github"></i> GitHub</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FEATURED PROJECTS
+       ========================================================================== -->
+  <section id="projects" class="projects-section">
+    <div class="section-header reveal">
+      <span class="section-label">03. Portfolios</span>
+      <h2 class="section-title">Featured <span>Projects</span></h2>
+    </div>
+
+    <div class="projects-list">
+      <!-- Project 1: SketchNest -->
+      <div class="project-row reveal">
+        <div class="project-visual-panel" data-project="sketchnest" aria-label="View SketchNest project details">
+          <img src="images/project2.png" alt="SketchNest Artwork Showcase Mockup" class="project-thumbnail">
+          <div class="project-overlay-glow"></div>
+        </div>
+        <div class="project-details-panel">
+          <span class="project-index">PROJECT 01</span>
+          <div class="project-title-row">
+            <h3 class="project-title">SketchNest</h3>
+          </div>
+          <p class="project-summary">
+            A full-stack online learning environment designed to aid artists learn and master sketch drawing through interactive stages, galleries, and ratings.
+          </p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">Bootstrap</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+          </div>
+          <div class="project-action-row">
+            <button class="btn-details" data-project="sketchnest" aria-label="Open detailed specifications for SketchNest">View Specifications <i class="fas fa-external-link-alt"></i></button>
+            <a href="https://github.com/komalmauryagithub/Sketchnest.git" target="_blank" rel="noopener noreferrer" class="btn-secondary" aria-label="SketchNest GitHub repository"><i class="fab fa-github"></i> Repo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: KFOOD -->
+      <div class="project-row reveal">
+        <div class="project-details-panel">
+          <span class="project-index">PROJECT 02</span>
+          <div class="project-title-row">
+            <h3 class="project-title">KFOOD E-Commerce</h3>
+          </div>
+          <p class="project-summary">
+            A responsive, interactive e-commerce platform specializing in themed Korean meals, food items, and online order processing workflows.
+          </p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+          <div class="project-action-row">
+            <button class="btn-details" data-project="kfood" aria-label="Open detailed specifications for KFOOD">View Specifications <i class="fas fa-external-link-alt"></i></button>
+            <a href="https://kfood-1-mfqv.onrender.com" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="KFOOD live demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="https://github.com/komalmauryagithub/KFood" target="_blank" rel="noopener noreferrer" class="btn-secondary" aria-label="KFOOD GitHub repository"><i class="fab fa-github"></i> Repo</a>
+          </div>
+        </div>
+        <div class="project-visual-panel" data-project="kfood" aria-label="View KFOOD project details">
+          <img src="images/project1.jpg" alt="KFOOD E-Commerce Landing Page Mockup" class="project-thumbnail">
+          <div class="project-overlay-glow"></div>
+        </div>
+      </div>
+
+      <!-- Project 3: AI Chatbot -->
+      <div class="project-row reveal">
+        <div class="project-visual-panel" data-project="aichatbot" aria-label="View AI Chatbot project details">
+          <img src="images/chatbot.jpg" alt="AI Chatbot Application Interface Mockup" class="project-thumbnail">
+          <div class="project-overlay-glow"></div>
+        </div>
+        <div class="project-details-panel">
+          <span class="project-index">PROJECT 03</span>
+          <div class="project-title-row">
+            <h3 class="project-title">AI Chatbot Portal</h3>
+          </div>
+          <p class="project-summary">
+            An advanced chat dashboard communicating directly with generative APIs to answer contextual requests in real-time.
+          </p>
+          <div class="project-tech-tags">
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express.js</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">OpenAI API</span>
+          </div>
+          <div class="project-action-row">
+            <button class="btn-details" data-project="aichatbot" aria-label="Open detailed specifications for AI Chatbot">View Specifications <i class="fas fa-external-link-alt"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       EDUCATION
+       ========================================================================== -->
+  <section id="education" class="education-section">
+    <div class="section-header reveal">
+      <span class="section-label">04. Qualification</span>
+      <h2 class="section-title">Academic <span>Journey</span></h2>
+    </div>
+
+    <div class="timeline-section-grid">
+      <div class="timeline-column reveal">
+        <div class="timeline-thread">
+          
+          <!-- Node 1 -->
+          <div class="timeline-node">
+            <div class="timeline-meta">
+              <span class="timeline-date">Graduated</span>
+              <span class="timeline-institution">University of Mumbai</span>
+            </div>
+            <h3 class="timeline-degree">Bachelor of Science in Computer Science</h3>
+          </div>
+
+          <!-- Node 2 -->
+          <div class="timeline-node">
+            <div class="timeline-meta">
+              <span class="timeline-date">Completed</span>
+              <span class="timeline-institution">State Board</span>
+            </div>
+            <h3 class="timeline-degree">Higher Secondary Certificate (HSC)</h3>
+          </div>
+
+          <!-- Node 3 -->
+          <div class="timeline-node">
+            <div class="timeline-meta">
+              <span class="timeline-date">Completed</span>
+              <span class="timeline-institution">State Board</span>
+            </div>
+            <h3 class="timeline-degree">Secondary School Certificate (SSC)</h3>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="timeline-art reveal" aria-hidden="true" style="display:flex; justify-content:center; align-items:center;">
+        <div style="font-size: 8rem; color: rgba(255,255,255,0.03); text-align: center;">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CERTIFICATIONS
+       ========================================================================== -->
+  <section id="certifications" class="certifications-section">
+    <div class="section-header reveal">
+      <span class="section-label">05. Verify</span>
+      <h2 class="section-title">Achievements & <span>Certifications</span></h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="certs-grid reveal" style="width: 100%; grid-column: span 2;">
+        
+        <!-- Cert 1 -->
+        <div class="cert-card">
+          <div class="cert-info">
+            <h4>Basics of Python</h4>
+            <span class="cert-issuer">Infosys</span>
+          </div>
+          <span class="cert-link"><i class="fas fa-certificate"></i></span>
+        </div>
+
+        <!-- Cert 2 -->
+        <div class="cert-card">
+          <div class="cert-info">
+            <h4>MSC-IT in MS Office</h4>
+            <span class="cert-issuer">Maharashtra State Board</span>
+          </div>
+          <span class="cert-link"><i class="fas fa-certificate"></i></span>
+        </div>
+
+        <!-- Cert 3 -->
+        <div class="cert-card">
+          <div class="cert-info">
+            <h4>Cybersecurity Job Simulation</h4>
+            <span class="cert-issuer">Forage Certification program</span>
+          </div>
+          <span class="cert-link"><i class="fas fa-certificate"></i></span>
+        </div>
+
+        <!-- Cert 4 -->
+        <div class="cert-card">
+          <div class="cert-info">
+            <h4>Data Labeling Job Simulation</h4>
+            <span class="cert-issuer">Forage Certification program</span>
+          </div>
+          <span class="cert-link"><i class="fas fa-certificate"></i></span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SOFT SKILLS
+       ========================================================================== -->
+  <section id="soft-skills" class="soft-skills-section">
+    <div class="section-header reveal">
+      <span class="section-label">06. Attributes</span>
+      <h2 class="section-title">Professional <span>Soft Skills</span></h2>
+    </div>
+
+    <div class="softskills-grid reveal">
+      
+      <!-- Card 1 -->
+      <div class="softskill-card">
+        <div class="softskill-icon-wrapper"><i class="fas fa-lightbulb"></i></div>
+        <h3 class="softskill-title">Problem Solving</h3>
+        <p class="softskill-desc">Resolving architectural issues and resolving complex validation pathways logically.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="softskill-card">
+        <div class="softskill-icon-wrapper"><i class="fas fa-comments"></i></div>
+        <h3 class="softskill-title">Communication</h3>
+        <p class="softskill-desc">Articulating requirements, technical choices, and updates clearly.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="softskill-card">
+        <div class="softskill-icon-wrapper"><i class="fas fa-users"></i></div>
+        <h3 class="softskill-title">Teamwork</h3>
+        <p class="softskill-desc">Working collaboratively across product boundaries to launch robust software.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="softskill-card">
+        <div class="softskill-icon-wrapper"><i class="fas fa-clock"></i></div>
+        <h3 class="softskill-title">Time Management</h3>
+        <p class="softskill-desc">Delivering features progressively and adhering to launch constraints.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="softskill-card">
+        <div class="softskill-icon-wrapper"><i class="fas fa-sync-alt"></i></div>
+        <h3 class="softskill-title">Adaptability</h3>
+        <p class="softskill-desc">Embracing new technologies, development environments, and software methodologies.</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="softskill-card">
+        <div class="softskill-icon-wrapper"><i class="fas fa-search"></i></div>
+        <h3 class="softskill-title">Attention to Detail</h3>
+        <p class="softskill-desc">Striving for clean, performant CSS structures and semantic DOM configurations.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT SECTION
+       ========================================================================== -->
+  <section id="contact" class="contact-section">
+    <div class="section-header reveal">
+      <span class="section-label">07. Connect</span>
+      <h2 class="section-title">Get In <span>Touch</span></h2>
+    </div>
+
+    <div class="contact-section-grid">
+      <div class="contact-info-panel reveal">
+        <p class="contact-lead">
+          Have an opportunity or project you want to discuss? Fill out the contact form or connect with me directly through the social channels.
+        </p>
+
+        <div class="contact-channels">
+          
+          <div class="contact-channel-card">
+            <div class="channel-icon"><i class="fas fa-envelope"></i></div>
+            <div class="channel-details">
+              <h4>Email Address</h4>
+              <p><a href="mailto:komalmaurya09072005@gmail.com">komalmaurya09072005@gmail.com</a></p>
+            </div>
+          </div>
+
+          <a href="https://linkedin.com/in/komal-maurya-b797a22b3" target="_blank" rel="noopener noreferrer" class="contact-channel-card" aria-label="Visit Komal Maurya's LinkedIn Profile">
+            <div class="channel-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div class="channel-details">
+              <h4>LinkedIn Profile</h4>
+              <p>komal-maurya</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/komalmauryagithub" target="_blank" rel="noopener noreferrer" class="contact-channel-card" aria-label="Visit Komal Maurya's GitHub Profile">
+            <div class="channel-icon"><i class="fab fa-github"></i></div>
+            <div class="channel-details">
+              <h4>GitHub Profile</h4>
+              <p>komalmauryagithub</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Contact AJAX Form -->
+      <div class="contact-form-panel reveal">
+        <form id="contact-form" class="contact-form" novalidate>
+          
+          <!-- Bot Honeypot -->
+          <div class="form-group sr-only" aria-hidden="true">
+            <label for="honeypot">Leave this blank</label>
+            <input type="text" id="honeypot" name="honeypot" autocomplete="off" class="form-input">
+          </div>
+
+          <!-- Name -->
+          <div class="form-group">
+            <label for="full_name" class="form-label">Full Name *</label>
+            <input type="text" id="full_name" name="full_name" required maxlength="150" class="form-input" placeholder="Your full name">
+            <span class="form-input-error" id="full_name-error" aria-live="polite"></span>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address *</label>
+            <input type="email" id="email" name="email" required maxlength="255" class="form-input" placeholder="you@example.com">
+            <span class="form-input-error" id="email-error" aria-live="polite"></span>
+          </div>
+
+          <!-- Phone (Optional) -->
+          <div class="form-group">
+            <label for="phone" class="form-label">Phone (Optional)</label>
+            <input type="tel" id="phone" name="phone" maxlength="30" class="form-input" placeholder="+123456789">
+            <span class="form-input-error" id="phone-error" aria-live="polite"></span>
+          </div>
+
+          <!-- Subject -->
+          <div class="form-group">
+            <label for="subject" class="form-label">Subject *</label>
+            <input type="text" id="subject" name="subject" required maxlength="255" class="form-input" placeholder="Message Subject">
+            <span class="form-input-error" id="subject-error" aria-live="polite"></span>
+          </div>
+
+          <!-- Message -->
+          <div class="form-group full-width">
+            <label for="message" class="form-label">Your Message *</label>
+            <textarea id="message" name="message" required maxlength="3000" class="form-input" placeholder="Write your message here..."></textarea>
+            <span class="form-input-error" id="message-error" aria-live="polite"></span>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="submit-btn-row">
+            <button type="submit" class="form-submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+            <span class="form-response-msg" id="form-response" aria-live="polite"></span>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-info">
+        <div class="footer-logo">KM<span>.</span></div>
+        <p class="footer-copy">&copy; <span id="current-year">2026</span> Komal Maurya. All rights reserved.</p>
+        <p class="footer-credit">Handcrafted with passion using Express, Node.js, and MySQL.</p>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://github.com/komalmauryagithub" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/komal-maurya-b797a22b3" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:komalmaurya09072005@gmail.com" aria-label="Send Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <a href="#home" class="back-to-top-btn" id="back-to-top" aria-label="Scroll back to top of the page">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- ==========================================================================
+       MODAL DIALOG (PROJECT DETAILS POPUP)
+       ========================================================================== -->
+  <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-wrapper">
+      <button class="modal-close-btn" id="modal-close" aria-label="Close project specifications dialog">
+        <i class="fas fa-times"></i>
+      </button>
+      
+      <img id="modal-img" src="" alt="Project Preview Mockup" class="modal-header-image">
+      
+      <div class="modal-body">
+        <h2 id="modal-title" class="modal-title">Project Name</h2>
+        
+        <div class="modal-meta-grid">
+          <div class="modal-desc-column">
+            <div>
+              <h3 class="modal-section-title">Overview</h3>
+              <p id="modal-summary">Brief project overview...</p>
+            </div>
+            
+            <div>
+              <h3 class="modal-section-title">Core Features</h3>
+              <ul id="modal-features-list" class="modal-features-list">
+                <!-- Loaded dynamically -->
+              </ul>
+            </div>
+          </div>
+          
+          <div class="modal-sidebar-column">
+            <div class="modal-sidebar-box">
+              <h4>Technologies</h4>
+              <div id="modal-tech-tags" class="project-tech-tags">
+                <!-- Loaded dynamically -->
+              </div>
+            </div>
+
+            <div class="modal-sidebar-box">
+              <h4>Project Dynamics</h4>
+              <div style="margin-bottom:12px;">
+                <span style="font-weight:600;font-size:0.85rem;color:var(--text-muted);display:block;margin-bottom:3px;">CHALLENGE:</span>
+                <p id="modal-challenges" style="font-size:0.85rem;color:var(--text-muted);line-height:1.4;">Dynamics...</p>
+              </div>
+              <div>
+                <span style="font-weight:600;font-size:0.85rem;color:var(--text-muted);display:block;margin-bottom:3px;">LEARNING:</span>
+                <p id="modal-learnings" style="font-size:0.85rem;color:var(--text-muted);line-height:1.4;">Dynamics...</p>
+              </div>
+            </div>
+
+            <div class="modal-sidebar-box" id="modal-actions-box">
+              <h4>Links</h4>
+              <div id="modal-actions" class="modal-sidebar-links">
+                <!-- Loaded dynamically -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dynamic Year scripting -->
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+  <!-- Load Main script -->
+  <script src="script.js"></script>
+</body>
+</html>
