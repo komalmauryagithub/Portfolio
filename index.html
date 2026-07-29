@@ -517,20 +517,22 @@
         </div>
       </div>
 
-      <!-- Contact AJAX Form -->
+      <!-- Contact Web3Forms Form -->
       <div class="contact-form-panel reveal">
-        <form id="contact-form" class="contact-form" novalidate>
+        <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <input type="hidden" name="access_key" value="8b2ab645-2bd5-4477-92ef-1b13dee99a62">
+          <input type="hidden" name="from_name" value="Komal Maurya Portfolio">
           
           <!-- Bot Honeypot -->
           <div class="form-group sr-only" aria-hidden="true">
             <label for="honeypot">Leave this blank</label>
-            <input type="text" id="honeypot" name="honeypot" autocomplete="off" class="form-input">
+            <input type="checkbox" id="honeypot" name="botcheck" tabindex="-1" autocomplete="off">
           </div>
 
           <!-- Name -->
           <div class="form-group">
             <label for="full_name" class="form-label">Full Name *</label>
-            <input type="text" id="full_name" name="full_name" required maxlength="150" class="form-input" placeholder="Your full name">
+            <input type="text" id="full_name" name="name" required maxlength="150" class="form-input" placeholder="Your full name">
             <span class="form-input-error" id="full_name-error" aria-live="polite"></span>
           </div>
 
@@ -581,7 +583,7 @@
       <div class="footer-info">
         <div class="footer-logo">KM<span>.</span></div>
         <p class="footer-copy">&copy; <span id="current-year">2026</span> Komal Maurya. All rights reserved.</p>
-        <p class="footer-credit">Handcrafted with passion using Express, Node.js, and MySQL.</p>
+        <p class="footer-credit">Handcrafted with passion using HTML, CSS, and JavaScript.</p>
       </div>
 
       <div class="footer-socials">
