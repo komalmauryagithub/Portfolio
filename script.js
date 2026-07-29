@@ -432,10 +432,11 @@ function initProjectModals() {
   }
 }
 
-// 8. Contact Form Integration (AJAX Submission)
+// 8. Contact Form Integration (Web3Forms AJAX Submission)
 function initContactForm() {
   const form = document.getElementById("contact-form");
   const responseMsg = document.getElementById("form-response");
+  const web3FormsEndpoint = "https://api.web3forms.com/submit";
 
   if (!form) return;
 
@@ -455,8 +456,17 @@ function initContactForm() {
       phone: document.getElementById("phone").value,
       subject: document.getElementById("subject").value,
       message: document.getElementById("message").value,
-      honeypot: document.getElementById("honeypot").value
+      honeypot: document.getElementById("honeypot").checked
     };
+
+    if (formData.honeypot) {
+      if (responseMsg) {
+        responseMsg.className = "form-response-msg success";
+        responseMsg.textContent = "Thank you! Your message has been received.";
+      }
+      form.reset();
+      return;
+    }
 
     // Client-side quick checks
     let hasErrors = false;
@@ -492,40 +502,56 @@ function initContactForm() {
     const originalBtnText = submitBtn.innerHTML;
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    if (responseMsg) {
+      responseMsg.className = "form-response-msg success";
+      responseMsg.textContent = "Sending your message...";
+    }
 
     try {
-      // Connect to the custom Node.js endpoint
-      // Fetch URL uses absolute path relative to host
-      const response = await fetch("/api/contact", {
+      const payload = {
+        access_key: form.querySelector('input[name="access_key"]').value,
+        from_name: form.querySelector('input[name="from_name"]').value,
+        name: formData.full_name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        subject: formData.subject.trim(),
+        message: formData.message.trim(),
+        botcheck: formData.honeypot
+      };
+
+      const response = await fetch(web3FormsEndpoint, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "Accept": "application/json"
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(payload)
       });
 
       const data = await response.json();
+      const responseText = data.message || data.error || (data.body && data.body.message);
 
-      if (data.success) {
+      if (response.ok && data.success) {
         // Success handler
         responseMsg.className = "form-response-msg success";
-        responseMsg.textContent = data.message;
+        responseMsg.textContent = responseText || "Thank you! Your message has been received.";
         form.reset(); // clear inputs
       } else {
-        // Validation errors returned from server
+        // Validation errors returned from Web3Forms
         responseMsg.className = "form-response-msg error";
-        responseMsg.textContent = data.message || "Submission failed.";
+        responseMsg.textContent = responseText || "Submission failed. Please try again.";
         
         if (data.errors) {
           Object.keys(data.errors).forEach(field => {
-            showError(field, data.errors[field]);
+            const fieldId = field === "name" ? "full_name" : field;
+            showError(fieldId, data.errors[field]);
           });
         }
       }
     } catch (networkError) {
       console.error("AJAX contact form error:", networkError);
       responseMsg.className = "form-response-msg error";
-      responseMsg.textContent = "Unable to connect to the backend server. Please verify your connection.";
+      responseMsg.textContent = "Unable to send your message right now. Please try again later.";
     } finally {
       // Restore submit button
       submitBtn.disabled = false;
