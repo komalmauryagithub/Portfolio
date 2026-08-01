@@ -70,7 +70,8 @@ const SKILLS_DATA = [
   { name: "MongoDB", category: "databases", icon: "fas fa-leaf" },
   { name: "Git", category: "tools", icon: "fab fa-git-alt" },
   { name: "GitHub", category: "tools", icon: "fab fa-github" },
-  { name: "Canva", category: "tools", icon: "fas fa-palette" }
+  { name: "Canva", category: "tools", icon: "fas fa-palette" },
+  { name: "MS Office", category: "tools", icon: "fas fa-file-word" }
 ];
 
 // ==========================================================================
