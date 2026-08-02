@@ -16,7 +16,7 @@ const PROJECTS_DATA = {
     ],
     stack: ["HTML5", "CSS3", "Bootstrap", "JavaScript", "Node.js", "Express.js", "MongoDB"],
     github: "https://github.com/komalmauryagithub/Sketchnest.git",
-    demo: "https://komalmauryagithub.github.io/Sketchnest/SketchNest",
+    demo: "https://sketchnest.onrender.com",
     challenges: "Handling image processing and comparative uploads seamlessly while keeping response rates low on the hosting instance.",
     learnings: "Deepened understanding of MongoDB schema designs for relational data (feedback/ratings) and managing user media assets efficiently."
   },
