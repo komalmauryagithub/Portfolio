@@ -48,8 +48,8 @@ const PROJECTS_DATA = {
       "Clean dark-mode interface for reading code output."
     ],
     stack: ["Node.js", "Express.js", "JavaScript", "OpenAI API", "HTML5", "CSS3"],
-    github: null, // No real URL (index.html had 'your-repo-link' which is fake, so omit it)
-    demo: null,
+    github: "https://github.com/komalmauryagithub/Ai-Chatbot",
+    demo: "https://ai-chatbot-m9sm.onrender.com",
     challenges: "Structuring system instructions for OpenAI prompts to maintain role accuracy and handling asynchronous API drops.",
     learnings: "Learned context window management, API error mapping, and structuring chatbot memory buffers."
   }
