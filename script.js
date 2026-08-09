@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initContactForm();
   initMouseSpotlights();
   initBackToTop();
+  initBackgroundAnimation();
 });
 
 // 1. Intro Loader
@@ -610,4 +611,157 @@ function initBackToTop() {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+}
+
+// 11. Interactive Background Animation (Neural Network)
+function initBackgroundAnimation() {
+  const canvas = document.getElementById('bg-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  
+  let width, height;
+  let particles = [];
+  
+  // Interactive properties
+  let mouse = { x: null, y: null, radius: 150 };
+  
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+  
+  window.addEventListener('mouseout', () => {
+    mouse.x = null;
+    mouse.y = null;
+  });
+  
+  window.addEventListener('click', (e) => {
+    // Add burst of particles on click
+    for (let i = 0; i < 5; i++) {
+      particles.push(new Particle(e.x, e.y));
+    }
+  });
+
+  function resize() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  }
+  
+  window.addEventListener('resize', resize);
+  resize();
+
+  class Particle {
+    constructor(x, y) {
+      this.x = x || Math.random() * width;
+      this.y = y || Math.random() * height;
+      this.size = Math.random() * 2 + 1; // 1 to 3
+      this.speedX = (Math.random() * 1) - 0.5;
+      this.speedY = (Math.random() * 1) - 0.5;
+      this.color = Math.random() > 0.5 ? 'rgba(0, 242, 254, 1)' : 'rgba(178, 36, 239, 1)';
+    }
+    
+    update() {
+      // Base movement
+      this.x += this.speedX;
+      this.y += this.speedY;
+      
+      // Bounce off walls
+      if (this.x < 0 || this.x > width) this.speedX *= -1;
+      if (this.y < 0 || this.y > height) this.speedY *= -1;
+
+      // Mouse interaction (repel)
+      if (mouse.x != null && mouse.y != null) {
+        let dx = mouse.x - this.x;
+        let dy = mouse.y - this.y;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < mouse.radius) {
+          let forceDirectionX = dx / distance;
+          let forceDirectionY = dy / distance;
+          let force = (mouse.radius - distance) / mouse.radius;
+          
+          // Repel slightly
+          this.x -= forceDirectionX * force * 2;
+          this.y -= forceDirectionY * force * 2;
+        }
+      }
+    }
+    
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = this.color;
+      ctx.fill();
+      ctx.shadowBlur = 0; // reset
+    }
+  }
+
+  function init() {
+    particles = [];
+    // Adjust density based on screen size
+    let numberOfParticles = (width * height) / 9000;
+    for (let i = 0; i < numberOfParticles; i++) {
+      particles.push(new Particle());
+    }
+  }
+  
+  function connect() {
+    let opacityValue = 1;
+    for (let a = 0; a < particles.length; a++) {
+      for (let b = a; b < particles.length; b++) {
+        let dx = particles[a].x - particles[b].x;
+        let dy = particles[a].y - particles[b].y;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+        
+        // Connect particles to each other
+        if (distance < 110) {
+          opacityValue = 1 - (distance / 110);
+          ctx.strokeStyle = `rgba(0, 242, 254, ${opacityValue * 0.4})`; 
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(particles[a].x, particles[a].y);
+          ctx.lineTo(particles[b].x, particles[b].y);
+          ctx.stroke();
+        }
+      }
+      
+      // Connect particles to mouse (Glowing Core effect)
+      if (mouse.x != null && mouse.y != null) {
+        let dx = particles[a].x - mouse.x;
+        let dy = particles[a].y - mouse.y;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < mouse.radius) {
+          opacityValue = 1 - (distance / mouse.radius);
+          ctx.strokeStyle = `rgba(178, 36, 239, ${opacityValue * 0.8})`; // Purple line connecting to mouse
+          ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.moveTo(particles[a].x, particles[a].y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function animate() {
+    requestAnimationFrame(animate);
+    // Deep dark background
+    ctx.fillStyle = '#050508';
+    ctx.fillRect(0, 0, width, height);
+    
+    // Draw connections first
+    connect();
+    
+    // Then draw particles
+    for (let i = 0; i < particles.length; i++) {
+      particles[i].update();
+      particles[i].draw();
+    }
+  }
+
+  init();
+  animate();
 }
