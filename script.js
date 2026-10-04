@@ -37,6 +37,24 @@ const PROJECTS_DATA = {
     challenges: "Managing dynamic state changes across multiple React components while syncing database orders securely.",
     learnings: "Mastered React state controls, writing clean custom hooks, and handling complex e-commerce order workflows."
   },
+  aiexpense: {
+    title: "AI Expense & Business Analytics — SaaS Platform",
+    image: "images/aiexpense.png",
+    summary: "Production-ready AI Expense & Financial Analytics SaaS platform. Engineered with React 18, Laravel REST API, Python FastAPI, and PostgreSQL. Integrates real-time financial summary dashboards, multi-period budget tracking, goal tracking, verified data visualizations, automated PDF/CSV reports, audit logs, and an intelligent AI Financial Assistant.",
+    features: [
+      "Real-time financial summary dashboards with verified data visualizations.",
+      "Multi-period budget tracking and goal tracking modules.",
+      "Automated PDF/CSV report generation for financial data.",
+      "Intelligent AI Financial Assistant for smart expense insights.",
+      "Comprehensive audit logs for transaction accountability.",
+      "Full-stack SaaS architecture with React 18 frontend and Laravel + FastAPI backend."
+    ],
+    stack: ["React 18", "Laravel", "Python", "FastAPI", "PostgreSQL", "REST API"],
+    github: "https://github.com/komalmauryagithub/Ai-Expenses-and-Business-analytics",
+    demo: "https://ai-expenses-and-business-analytics-1.onrender.com",
+    challenges: "Integrating multiple backend services (Laravel REST API and Python FastAPI) into a unified platform while maintaining real-time data accuracy across dashboards.",
+    learnings: "Gained deep experience in multi-service architecture, financial data visualization, automated report generation pipelines, and building AI-powered assistant features."
+  },
   aichatbot: {
     title: "AI Chatbot Website",
     image: "images/chatbot.jpg",
@@ -630,11 +648,6 @@ function initBackgroundAnimation() {
     mouse.y = e.clientY;
   });
   
-  window.addEventListener('mouseout', () => {
-    mouse.x = null;
-    mouse.y = null;
-  });
-  
   window.addEventListener('click', (e) => {
     // Add burst of particles on click
     for (let i = 0; i < 5; i++) {
@@ -654,7 +667,7 @@ function initBackgroundAnimation() {
     constructor(x, y) {
       this.x = x || Math.random() * width;
       this.y = y || Math.random() * height;
-      this.size = Math.random() * 2 + 1; // 1 to 3
+      this.size = Math.random() * 2 + 1.5; // size between 1.5 and 3.5
       this.speedX = (Math.random() * 1) - 0.5;
       this.speedY = (Math.random() * 1) - 0.5;
       this.color = Math.random() > 0.5 ? 'rgba(0, 242, 254, 1)' : 'rgba(178, 36, 239, 1)';
@@ -664,7 +677,7 @@ function initBackgroundAnimation() {
       // Base movement
       this.x += this.speedX;
       this.y += this.speedY;
-      
+
       // Bounce off walls
       if (this.x < 0 || this.x > width) this.speedX *= -1;
       if (this.y < 0 || this.y > height) this.speedY *= -1;
@@ -674,19 +687,19 @@ function initBackgroundAnimation() {
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
-        
+
         if (distance < mouse.radius) {
           let forceDirectionX = dx / distance;
           let forceDirectionY = dy / distance;
           let force = (mouse.radius - distance) / mouse.radius;
-          
+
           // Repel slightly
           this.x -= forceDirectionX * force * 2;
           this.y -= forceDirectionY * force * 2;
         }
       }
     }
-    
+
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -706,7 +719,7 @@ function initBackgroundAnimation() {
       particles.push(new Particle());
     }
   }
-  
+
   function connect() {
     let opacityValue = 1;
     for (let a = 0; a < particles.length; a++) {
@@ -714,11 +727,11 @@ function initBackgroundAnimation() {
         let dx = particles[a].x - particles[b].x;
         let dy = particles[a].y - particles[b].y;
         let distance = Math.sqrt(dx * dx + dy * dy);
-        
+
         // Connect particles to each other
         if (distance < 110) {
           opacityValue = 1 - (distance / 110);
-          ctx.strokeStyle = `rgba(0, 242, 254, ${opacityValue * 0.4})`; 
+          ctx.strokeStyle = `rgba(0, 242, 254, ${opacityValue * 0.4})`;
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(particles[a].x, particles[a].y);
@@ -726,13 +739,13 @@ function initBackgroundAnimation() {
           ctx.stroke();
         }
       }
-      
+
       // Connect particles to mouse (Glowing Core effect)
       if (mouse.x != null && mouse.y != null) {
         let dx = particles[a].x - mouse.x;
         let dy = particles[a].y - mouse.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
-        
+
         if (distance < mouse.radius) {
           opacityValue = 1 - (distance / mouse.radius);
           ctx.strokeStyle = `rgba(178, 36, 239, ${opacityValue * 0.8})`; // Purple line connecting to mouse
@@ -751,10 +764,10 @@ function initBackgroundAnimation() {
     // Deep dark background
     ctx.fillStyle = '#050508';
     ctx.fillRect(0, 0, width, height);
-    
+
     // Draw connections first
     connect();
-    
+
     // Then draw particles
     for (let i = 0; i < particles.length; i++) {
       particles[i].update();
