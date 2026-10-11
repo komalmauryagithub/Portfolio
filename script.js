@@ -70,6 +70,24 @@ const PROJECTS_DATA = {
     demo: "https://ai-chatbot-m9sm.onrender.com",
     challenges: "Structuring system instructions for OpenAI prompts to maintain role accuracy and handling asynchronous API drops.",
     learnings: "Learned context window management, API error mapping, and structuring chatbot memory buffers."
+  },
+  memora: {
+    title: "MEMORA — Event & Memory Calendar",
+    image: "images/memora.png",
+    summary: "An aesthetic, scrapbook-style event calendar and memory keeping web platform where users can create events, attach photos, write captions, and revisit moments through an interactive monthly calendar, polaroid photo gallery, and upcoming timeline dashboard.",
+    features: [
+      "Interactive 7-column monthly calendar grid with custom category badges and event chips.",
+      "Scrapbook-styled polaroid memory gallery with tilt angles, pins, and photo previews.",
+      "Cloudinary integration for photo uploads with memory buffer stream processing.",
+      "Chronological upcoming events timeline with countdown badges.",
+      "Real-time event filtering, search, and category-based sorting.",
+      "Secure user authentication with JWT, bcrypt password hashing, and rate limiting."
+    ],
+    stack: ["React 18", "Vite", "Node.js", "Express.js", "MongoDB", "Cloudinary", "REST API"],
+    github: "https://github.com/komalmauryagithub/Modera__",
+    demo: "https://modera-2dh0.onrender.com",
+    challenges: "Implementing dynamic scrapbook polaroid styling, calendar date matrix calculations with leap years, and memory buffer photo streaming to Cloudinary securely.",
+    learnings: "Strengthened full-stack calendar algorithms with date-fns, Cloudinary stream uploads via Multer, and crafting responsive scrapbook aesthetics with CSS."
   }
 };
 
